@@ -4,7 +4,7 @@ A beautiful, fully functional bucket list web app built with plain HTML, CSS, an
 
 ---
 ## Live Demo :
-
+https://psnwebdev.github.io/Bucket-List-Board/
 ---
 
 ## 📁 File Structure
