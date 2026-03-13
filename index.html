@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Bucket List</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ── Page Header ── -->
+  <div class="page-header">
+    <h1>My <span>Bucket</span> List</h1>
+    <p>Dream it. Plan it. Live it.</p>
+  </div>
+
+  <!-- ── Stats ── -->
+  <div class="stats-row">
+    <div class="stat">
+      <div class="stat-num" id="statTotal">0</div>
+      <div class="stat-label">Total</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat">
+      <div class="stat-num" id="statDone">0</div>
+      <div class="stat-label">Done</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat">
+      <div class="stat-num" id="statLeft">0</div>
+      <div class="stat-label">Remaining</div>
+    </div>
+  </div>
+
+  <!-- ── Add Form ── -->
+  <div class="add-section">
+    <div class="add-form">
+      <div class="add-form-title">+ Add a new dream</div>
+      <div class="input-row">
+        <div class="input-group" style="flex: 2">
+          <input type="text" id="newTitle"
+                 placeholder="What do you want to do?" maxlength="120" />
+        </div>
+        <div class="input-group">
+          <select id="newCategory">
+            <option value="adventure">🏔 Adventure</option>
+            <option value="travel">✈️ Travel</option>
+            <option value="food">🍜 Food</option>
+            <option value="learning">📚 Learning</option>
+            <option value="personal">❤️ Personal</option>
+            <option value="creative">🎨 Creative</option>
+            <option value="other">⭐ Other</option>
+          </select>
+        </div>
+        <div class="input-group">
+          <select id="newPriority">
+            <option value="high">🔴 High Priority</option>
+            <option value="med" selected>🟡 Medium</option>
+            <option value="low">🟢 Low Priority</option>
+          </select>
+        </div>
+        <button class="btn-add" onclick="addItem()">Add to List</button>
+      </div>
+      <input type="text" id="newNote" class="note-input"
+             placeholder="Add a note or details (optional)" />
+    </div>
+  </div>
+
+  <!-- ── Filters ── -->
+  <div class="filter-row">
+    <button class="filter-btn active"  onclick="setFilter('all', this)">All</button>
+    <button class="filter-btn"         onclick="setFilter('todo', this)">To Do</button>
+    <button class="filter-btn"         onclick="setFilter('done', this)">Done</button>
+    <button class="filter-btn"         onclick="setFilter('adventure', this)">🏔 Adventure</button>
+    <button class="filter-btn"         onclick="setFilter('travel', this)">✈️ Travel</button>
+    <button class="filter-btn"         onclick="setFilter('food', this)">🍜 Food</button>
+    <button class="filter-btn"         onclick="setFilter('learning', this)">📚 Learning</button>
+    <button class="filter-btn"         onclick="setFilter('personal', this)">❤️ Personal</button>
+    <button class="filter-btn"         onclick="setFilter('creative', this)">🎨 Creative</button>
+  </div>
+
+  <!-- ── Board ── -->
+  <div class="board" id="board"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
